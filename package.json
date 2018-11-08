@@ -1,0 +1,31 @@
+{
+  "name": "gh-autocommit",
+  "version": "1.0.0",
+  "description": "npm package to help auto commit on file change",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhaveed/gh-autocommit.git"
+  },
+  "keywords": [
+    "git",
+    "github",
+    "gh",
+    "autocommit",
+    "commit",
+    "file",
+    "watch"
+  ],
+  "author": "David Adegoke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dhaveed/gh-autocommit/issues"
+  },
+  "homepage": "https://github.com/dhaveed/gh-autocommit#readme",
+  "dependencies": {
+    "chokidar": "^2.0.4"
+  }
+}
