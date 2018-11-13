@@ -2,7 +2,7 @@ var express = require('express');
 var http = require('http');
 const watch = require('node-watch');
 const fs = require('fs');
-var exec = require('child_process').exec;
+const { exec } = require('child_process');
 var chokidar = require('chokidar');
  
 // One-liner for current directory, ignores .dotfiles
@@ -39,12 +39,37 @@ watcher
   .on('ready', () => log('Initial scan complete. Ready for changes'))
   .on('raw', (event, path, details) => {
     log('Raw event info:', event, path, details);
-  });
+  })
+  .on('change', (path, stats) => {
+	  if (stats) console.log(`File ${path} changed size to ${stats.size}`);
+   });
 
-watcher.on('change', (path, stats) => {
-  if (stats) console.log(`File ${path} changed size to ${stats.size}`);
-});
 
 var watchedPaths = watcher.getWatched();
 
 watcher.unwatch('.gitignore*');
+
+function doGitCommand(){
+	exec('git add . ', (err, stdout, stderr) => {
+	  if (err) {
+	    // node couldn't execute the command
+	    return;
+	  }
+
+	  // the *entire* stdout and stderr (buffered)
+	  console.log(`stdout: ${stdout}`);
+	  console.log(`stderr: ${stderr}`);
+	});
+
+	exec('git commit -m " ' + path + '"', (err, stdout, stderr) => {
+	  if (err) {
+	    // node couldn't execute the command
+	    return;
+	  }
+
+	  // the *entire* stdout and stderr (buffered)
+	  console.log(`stdout: ${stdout}`);
+	  console.log(`stderr: ${stderr}`);
+	});
+}
+
