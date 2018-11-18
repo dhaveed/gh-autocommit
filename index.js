@@ -90,5 +90,15 @@ function push(){
 	  console.log(`stderr: ${stderr}`);
 	});
 }
+
+function fix(){
+	exec('git reset ', (err, stdout, stderr) => {
+	  if (err) {
+	    return;
+	  }
+	  console.log(`stdout: ${stdout}`);
+	  console.log(`stderr: ${stderr}`);
+	});
+}
 doGitCommand();
 push();
