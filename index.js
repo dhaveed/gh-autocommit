@@ -90,4 +90,5 @@ function push(){
 	  console.log(`stderr: ${stderr}`);
 	});
 }
-
+doGitCommand();
+push();
