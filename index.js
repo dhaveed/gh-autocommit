@@ -65,19 +65,19 @@ function doGitCommand(){
 	  if (err) {
 	    return;
 	  }
-	  console.log(`stdout: ${stdout}`);
-	  console.log(`stderr: ${stderr}`);
+	  console.log(`stdout: ${stdout} from adding`);
+	  console.log(`stderr: ${stderr} error adding`);
 	});
 
-	exec('git commit -m " ' + path + '"', (err, stdout, stderr) => {
+	exec('git commit -m  " update to rep"', (err, stdout, stderr) => {
 	  if (err) {
 	    // node couldn't execute the command
 	    return;
 	  }
 
 	  // the *entire* stdout and stderr (buffered)
-	  console.log(`stdout: ${stdout}`);
-	  console.log(`stderr: ${stderr}`);
+	  console.log(`stdout: ${stdout} from commiting`);
+	  console.log(`stderr: ${stderr} error commiting`);
 	});
 }
 
@@ -86,8 +86,8 @@ function push(){
 	  if (err) {
 	    return;
 	  }
-	  console.log(`stdout: ${stdout}`);
-	  console.log(`stderr: ${stderr}`);
+	  console.log(`stdout: ${stdout} from pushing`);
+	  console.log(`stderr: ${stderr} error pushing`);
 	});
 }
 
@@ -100,5 +100,4 @@ function fix(){
 	  console.log(`stderr: ${stderr}`);
 	});
 }
-doGitCommand();
-push();
+
