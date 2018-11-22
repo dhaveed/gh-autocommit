@@ -102,7 +102,8 @@ function fix(){
 }
 
 function autocommit(){
-
+	doGitCommand();
+	push();
 }
 
 module.exports = autocommit;
