@@ -101,6 +101,7 @@ function fix(){
 	});
 }
 
-doGitCommand();
+
+module.exports = autocommit;
 
 
