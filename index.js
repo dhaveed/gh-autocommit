@@ -101,6 +101,9 @@ function fix(){
 	});
 }
 
+function autocommit(){
+
+}
 
 module.exports = autocommit;
 
