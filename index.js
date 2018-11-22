@@ -101,3 +101,6 @@ function fix(){
 	});
 }
 
+doGitCommand();
+
+
