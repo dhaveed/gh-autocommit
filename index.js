@@ -69,7 +69,7 @@ function doGitCommand(){
 	  console.log(`stderr: ${stderr} error adding`);
 	});
 
-	exec('git commit -m  " update to rep"', (err, stdout, stderr) => {
+	exec('git commit -m  "gh-autocommit: Automatically committed new changes"', (err, stdout, stderr) => {
 	  if (err) {
 	    // node couldn't execute the command
 	    return;
